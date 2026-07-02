@@ -3,3 +3,17 @@ kind: Kustomization
 namespace: linkding
 resources:
   - ../../base/linkding
+patches:
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: linkding
+      spec:
+        template:
+          spec:
+            containers:
+              - name: linkding
+                env:
+                  - name: LD_CSRF_TRUSTED_ORIGINS
+                    value: https://ldpi.wojtektech.org
