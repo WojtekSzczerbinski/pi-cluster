@@ -1,0 +1,21 @@
+# Local-only README (private project notes, not for public GitHub)
+README.md
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Kustomize / Flux local build output
+build/
+*.tmp
+
+# Secrets — never commit these
+*.secret.yaml
+secrets/
+*.kubeconfig
+.env
